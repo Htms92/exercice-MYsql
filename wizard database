@@ -15,6 +15,24 @@ mysql> show databases;
 mysql> CREATE DATABASE wild_db_quest;
 Query OK, 1 row affected (0.01 sec)
 
+mysql> SHOW databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| wild_db_quest      |
+| wilder             |
+| world              |
++--------------------+
+8 rows in set (0.00 sec)
+
+mysql> USE wild_db_quest;
+Database changed
+
 mysql> CREATE TABLE `wild_db_quest`.`wizard` (
     ->   `id` INT NOT NULL AUTO_INCREMENT,
     ->   `firstname` VARCHAR(100) NOT NULL,
@@ -24,3 +42,31 @@ mysql> CREATE TABLE `wild_db_quest`.`wizard` (
     ->   `biography` TEXT NULL,
     ->   PRIMARY KEY (`id`));
 Query OK, 0 rows affected (0.09 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_wild_db_quest |
++-------------------------+
+| wizard                  |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> ALTER TABLE wizard ADD is_muggle BOOLEAN DEFAULT TRUE;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE `wild_db_quest`.`school` (
+    ->   `id` INT NOT NULL AUTO_INCREMENT,
+    ->   `name` VARCHAR(100) NOT NULL,
+    ->   `capacity` INT NULL,
+    ->   `country` VARCHAR(255) NOT NULL,
+    ->   PRIMARY KEY (`id`));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> SHOW tables;
++-------------------------+
+| Tables_in_wild_db_quest |
++-------------------------+
+| school                  |
+| wizard                  |
++-------------------------+
+2 rows in set (0.00 sec)
