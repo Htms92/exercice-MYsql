@@ -51,3 +51,27 @@ mysql> SELECT * FROM school;
 | 11 | Uagadou School of Magic                      |      350 | Uganda         |
 +----+----------------------------------------------+----------+----------------+
 11 rows in set (0.00 sec)
+
+mysql> UPDATE school
+    -> SET capacity = 700
+    -> WHERE id = 10;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM school;
++----+----------------------------------------------+----------+----------------+
+| id | name                                         | capacity | country        |
++----+----------------------------------------------+----------+----------------+
+|  1 | Beauxbatons Academy of Magic                 |      550 | France         |
+|  2 | Castelobruxo                                 |      380 | Brazil         |
+|  3 | Durmstrang Institute                         |      570 | Sweden         |
+|  4 | Beauxbatons Academy of Magic                 |      550 | France         |
+|  5 | Castelobruxo                                 |      380 | Brazil         |
+|  6 | Durmstrang Institute                         |      570 | Norway         |
+|  7 | Hogwarts School of Witchcraft and Wizardry   |      450 | United Kingdom |
+|  8 | Ilvermorny School of Witchcraft and Wizardry |      300 | USA            |
+|  9 | Koldovstoretz                                |      125 | Russia         |
+| 10 | Mahoutokoro School of Magic                  |      700 | Japan          |
+| 11 | Uagadou School of Magic                      |      350 | Uganda         |
++----+----------------------------------------------+----------+----------------+
+11 rows in set (0.00 sec)
