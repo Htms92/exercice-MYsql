@@ -20,10 +20,13 @@ mysql> show databases;
 mysql> USE wild_db_quest;
 Database changed
 mysql> DROP TABLE IF EXISTS `school`;
-Query OK, 0 rows affected (0.05 sec)
+Query OK, 0 rows affected, 1 warning (0.01 sec)
 
-mysql> DROP TABLE IF EXISTS `wizard`;
-Query OK, 0 rows affected (0.03 sec)
+mysql> /*!40101 SET @saved_cs_client     = @@character_set_client */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!50503 SET character_set_client = utf8mb4 */;
+Query OK, 0 rows affected (0.00 sec)
 
 mysql> CREATE TABLE `school` (
     ->   `id` int NOT NULL AUTO_INCREMENT,
@@ -32,16 +35,44 @@ mysql> CREATE TABLE `school` (
     ->   `country` varchar(255) NOT NULL,
     ->   PRIMARY KEY (`id`)
     -> ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-Query OK, 0 rows affected (0.03 sec)
+Query OK, 0 rows affected (0.04 sec)
 
+mysql> /*!40101 SET character_set_client = @saved_cs_client */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Dumping data for table `school`
+mysql> --
+mysql>
 mysql> LOCK TABLES `school` WRITE;
-Query OK, 0 rows affected (0.01 sec)
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40000 ALTER TABLE `school` DISABLE KEYS */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 mysql> INSERT INTO `school` VALUES (2,'Castelobruxo',380,'Brazil'),(3,'Durmstrang Institute',570,'sweden'),(4,'Hogwarts School of Witchcraft and Wizardry',450,'United Kingdom'),(5,'Ilvermorny School of Witchcraft and Wizardry',300,'USA'),(6,'Koldovstoretz',125,'Russia');
 Query OK, 5 rows affected (0.00 sec)
 Records: 5  Duplicates: 0  Warnings: 0
 
+mysql> /*!40000 ALTER TABLE `school` ENABLE KEYS */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
 mysql> UNLOCK TABLES;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Table structure for table `wizard`
+mysql> --
+mysql>
+mysql> DROP TABLE IF EXISTS `wizard`;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> /*!40101 SET @saved_cs_client     = @@character_set_client */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!50503 SET character_set_client = utf8mb4 */;
 Query OK, 0 rows affected (0.00 sec)
 
 mysql> CREATE TABLE `wizard` (
@@ -54,19 +85,49 @@ mysql> CREATE TABLE `wizard` (
     ->   `is_muggle` tinyint(1) NOT NULL,
     ->   PRIMARY KEY (`id`)
     -> ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-Query OK, 0 rows affected, 1 warning (0.03 sec)
+Query OK, 0 rows affected, 1 warning (0.04 sec)
 
+mysql> /*!40101 SET character_set_client = @saved_cs_client */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> --
+mysql> -- Dumping data for table `wizard`
+mysql> --
+mysql>
 mysql> LOCK TABLES `wizard` WRITE;
 Query OK, 0 rows affected (0.00 sec)
 
+mysql> /*!40000 ALTER TABLE `wizard` DISABLE KEYS */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
 mysql> INSERT INTO `wizard` VALUES (1,'harry','potter','1980-07-31','london','',0),(2,'hermione','granger','1979-09-19','','Friend of Harry Potter',0),(3,'lily','potter','1960-01-30','','mother of Harry Potter',0),(4,'ron','weasley','1980-03-01','','Best friend of Harry',0),(5,'ginny','weasley','1981-08-11','','Sister of Ron and girlfriend of Harry',0),(6,'fred','weasley','1978-04-01','','',0),(7,'george','weasley','1978-04-01','','',0),(8,'arthur','weasley','1950-02-06','','',0),(9,'molly','weasley','1949-01-01','','',0),(10,'drago','malefoy','1980-06-05','','',0),(11,'albus','dumbledore','1881-07-01','','',0),(12,'severus','rogue','1960-01-09','','',0),(13,'tom','jédusor','1926-12-31','','Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom alias Voldermort',0),(14,'dudley','dursley','1980-06-23','','Cousin d\'Harry',1);
-Query OK, 14 rows affected (0.01 sec)
+Query OK, 14 rows affected (0.00 sec)
 Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> /*!40000 ALTER TABLE `wizard` ENABLE KEYS */;
+Query OK, 0 rows affected, 1 warning (0.00 sec)
 
 mysql> UNLOCK TABLES;
 Query OK, 0 rows affected (0.00 sec)
 
-mysql>  SELECT * FROM wizard;
+mysql> /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+ERROR 1231 (42000): Variable 'time_zone' can't be set to the value of 'NULL'
+mysql>
+mysql> /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+ERROR 1231 (42000): Variable 'sql_mode' can't be set to the value of 'NULL'
+mysql> /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+ERROR 1231 (42000): Variable 'foreign_key_checks' can't be set to the value of 'NULL'
+mysql> /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+ERROR 1231 (42000): Variable 'unique_checks' can't be set to the value of 'NULL'
+mysql> /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+ERROR 1231 (42000): Variable 'character_set_client' can't be set to the value of 'NULL'
+mysql> /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+ERROR 1231 (42000): Variable 'collation_connection' can't be set to the value of 'NULL'
+mysql> SELECT * FROM wizard;
 +----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
 | id | firstname | lastname   | birthday   | birth_place | biography                                                   | is_muggle |
 +----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
@@ -82,12 +143,12 @@ mysql>  SELECT * FROM wizard;
 | 10 | drago     | malefoy    | 1980-06-05 |             |                                                             |         0 |
 | 11 | albus     | dumbledore | 1881-07-01 |             |                                                             |         0 |
 | 12 | severus   | rogue      | 1960-01-09 |             |                                                             |         0 |
-| 13 | tom       | jédusor    | 1926-12-31 |             | Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom alias Voldermort |         0 |
+| 13 | tom       | j├®dusor   | 1926-12-31 |             | Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom alias Voldermort |         0 |
 | 14 | dudley    | dursley    | 1980-06-23 |             | Cousin d'Harry                                              |         1 |
 +----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
 14 rows in set (0.00 sec)
 
-mysql>  SELECT * FROM school;
+mysql> SELECT * FROM school;
 +----+----------------------------------------------+----------+----------------+
 | id | name                                         | capacity | country        |
 +----+----------------------------------------------+----------+----------------+
