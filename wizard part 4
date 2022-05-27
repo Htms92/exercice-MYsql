@@ -169,3 +169,10 @@ mysql> CREATE TABLE `player` (
     ->    PRIMARY KEY (`id`)
     -> );
 Query OK, 0 rows affected (0.08 sec)
+
+mysql> CREATE TABLE `team` (
+    ->   `id` int NOT NULL,
+    ->     `name` varchar(80) DEFAULT NULL,
+    ->   PRIMARY KEY (`id`)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
