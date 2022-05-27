@@ -254,10 +254,6 @@ mysql> /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 ERROR 1231 (42000): Variable 'collation_connection' can't be set to the value of 'NULL'
 mysql> /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 ERROR 1231 (42000): Variable 'sql_notes' can't be set to the value of 'NULL'
-mysql> SELECT FROM * player;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM * player' at line 1
-mysql> SELECT FROM * player;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM * player' at line 1
 mysql>  SELECT * FROM player;
 +----+-----------+---------+--------+------------------+
 | id | wizard_id | team_id | role   | enrollement_date |
