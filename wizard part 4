@@ -159,3 +159,13 @@ mysql> SELECT * FROM school;
 |  6 | Koldovstoretz                                |      125 | Russia         |
 +----+----------------------------------------------+----------+----------------+
 5 rows in set (0.00 sec)
+
+mysql> CREATE TABLE `player` (
+    ->   `id` int NOT NULL,
+    ->   `wizard_id` int NOT NULL,
+    ->   `team_id` int NOT NULL,
+    ->   `role` varchar(50) NOT NULL,
+    ->   `enrollement_date` date NOT NULL,
+    ->    PRIMARY KEY (`id`)
+    -> );
+Query OK, 0 rows affected (0.08 sec)
