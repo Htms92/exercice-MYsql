@@ -1,1 +1,156 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| countrizz          |
+| information_schema |
+| movies             |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| users              |
+| wcs_steam          |
+| wild_db_quest      |
+| wilder             |
+| world              |
++--------------------+
+12 rows in set (0.06 sec)
 
+mysql> USE wild_db_quest;
+Database changed
+
+mysql> SELECT * FROM wizard;
++----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
+| id | firstname | lastname   | birthday   | birth_place | biography                                                   | is_muggle |
++----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
+|  1 | harry     | potter     | 1980-07-31 | london      |                                                             |         0 |
+|  2 | hermione  | granger    | 1979-09-19 |             | Friend of Harry Potter                                      |         0 |
+|  3 | lily      | potter     | 1960-01-30 |             | mother of Harry Potter                                      |         0 |
+|  4 | ron       | weasley    | 1980-03-01 |             | Best friend of Harry                                        |         0 |
+|  5 | ginny     | weasley    | 1981-08-11 |             | Sister of Ron and girlfriend of Harry                       |         0 |
+|  6 | fred      | weasley    | 1978-04-01 |             |                                                             |         0 |
+|  7 | george    | weasley    | 1978-04-01 |             |                                                             |         0 |
+|  8 | arthur    | weasley    | 1950-02-06 |             |                                                             |         0 |
+|  9 | molly     | weasley    | 1949-01-01 |             |                                                             |         0 |
+| 10 | drago     | malefoy    | 1980-06-05 |             |                                                             |         0 |
+| 11 | albus     | dumbledore | 1881-07-01 |             |                                                             |         0 |
+| 12 | severus   | rogue      | 1960-01-09 |             |                                                             |         0 |
+| 13 | tom       | j├®dusor   | 1926-12-31 |             | Celui-Dont-On-Ne-Doit-Pas-Prononcer-Le-Nom alias Voldermort |         0 |
+| 14 | dudley    | dursley    | 1980-06-23 |             | Cousin d'Harry                                              |         1 |
++----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT * FROM school;
++----+----------------------------------------------+----------+----------------+
+| id | name                                         | capacity | country        |
++----+----------------------------------------------+----------+----------------+
+|  2 | Castelobruxo                                 |      380 | Brazil         |
+|  3 | Durmstrang Institute                         |      570 | sweden         |
+|  4 | Hogwarts School of Witchcraft and Wizardry   |      450 | United Kingdom |
+|  5 | Ilvermorny School of Witchcraft and Wizardry |      300 | USA            |
+|  6 | Koldovstoretz                                |      125 | Russia         |
++----+----------------------------------------------+----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql>  SELECT * FROM player;
++----+-----------+---------+--------+------------------+
+| id | wizard_id | team_id | role   | enrollement_date |
++----+-----------+---------+--------+------------------+
+|  1 |         1 |       4 | beater | 1995-10-09       |
+|  2 |         2 |       1 | chaser | 1995-08-17       |
+|  3 |         3 |       1 | seeker | 1994-12-03       |
+|  4 |         4 |       3 | chaser | 1995-03-24       |
+|  5 |         5 |       3 | keeper | 1997-07-16       |
+|  6 |         6 |       1 | beater | 1994-01-10       |
+|  7 |         7 |       4 | chaser | 1999-01-21       |
+|  8 |         8 |       4 | keeper | 1991-10-20       |
+| 10 |        10 |       1 | beater | 1991-08-03       |
+| 11 |        11 |       3 | beater | 1996-10-04       |
+| 12 |        12 |       2 | chaser | 1992-01-27       |
+| 13 |        13 |       2 | beater | 1991-01-11       |
+| 14 |        14 |       2 | seeker | 1995-08-17       |
+| 16 |        16 |       3 | beater | 1992-11-27       |
+| 17 |        17 |       1 | seeker | 1993-07-07       |
+| 18 |        18 |       1 | keeper | 1991-05-01       |
+| 19 |        19 |       4 | keeper | 1997-11-02       |
+| 20 |        20 |       1 | keeper | 1995-04-24       |
+| 21 |        21 |       1 | chaser | 1991-03-12       |
+| 22 |        22 |       2 | chaser | 1990-07-05       |
+| 23 |        23 |       4 | beater | 1995-01-06       |
+| 24 |        24 |       1 | beater | 1997-02-08       |
+| 25 |        25 |       3 | beater | 1996-12-16       |
+| 26 |        26 |       2 | chaser | 1997-02-07       |
+| 27 |        27 |       2 | chaser | 1999-07-31       |
+| 28 |        28 |       3 | seeker | 1994-05-13       |
+| 29 |        29 |       1 | chaser | 1997-08-14       |
+| 30 |        30 |       1 | seeker | 1993-08-30       |
+| 31 |        31 |       1 | beater | 1994-11-16       |
+| 32 |        32 |       4 | seeker | 1992-08-14       |
+| 33 |        33 |       1 | keeper | 1995-12-02       |
+| 34 |        34 |       1 | chaser | 1996-01-31       |
+| 35 |        35 |       3 | chaser | 1992-03-21       |
+| 36 |        36 |       3 | seeker | 1997-10-30       |
+| 37 |        37 |       3 | chaser | 1991-04-27       |
+| 38 |        38 |       2 | chaser | 1998-04-05       |
+| 39 |        39 |       1 | beater | 1992-02-17       |
+| 40 |        40 |       1 | chaser | 1995-10-15       |
+| 41 |        41 |       1 | chaser | 1999-10-25       |
+| 42 |        42 |       1 | chaser | 1998-05-06       |
+| 43 |        43 |       2 | chaser | 1998-03-01       |
+| 44 |        44 |       2 | chaser | 1991-03-11       |
+| 46 |        46 |       3 | chaser | 1993-11-02       |
+| 47 |        47 |       3 | chaser | 1992-03-12       |
+| 48 |        48 |       3 | seeker | 1993-03-17       |
+| 49 |        49 |       1 | beater | 1992-07-14       |
+| 50 |        50 |       3 | chaser | 1996-12-02       |
+| 51 |        51 |       2 | chaser | 1995-06-25       |
+| 52 |        52 |       3 | beater | 1991-12-14       |
+| 55 |        55 |       1 | chaser | 1991-05-14       |
+| 56 |        56 |       1 | beater | 1997-03-05       |
+| 57 |        57 |       1 | beater | 1996-12-07       |
+| 58 |        58 |       1 | chaser | 1999-02-23       |
+| 59 |        59 |       2 | beater | 1995-09-23       |
+| 60 |        60 |       2 | beater | 1992-04-12       |
+| 61 |        61 |       2 | seeker | 1992-10-09       |
+| 62 |        62 |       3 | chaser | 1990-02-27       |
+| 64 |        64 |       4 | chaser | 1999-01-12       |
+| 66 |        66 |       3 | seeker | 1991-02-23       |
+| 67 |        67 |       4 | beater | 1996-07-18       |
+| 68 |        68 |       4 | keeper | 1993-10-01       |
+| 69 |        69 |       3 | beater | 1997-03-06       |
+| 70 |        70 |       1 | chaser | 1995-11-08       |
+| 71 |        71 |       4 | beater | 1998-06-12       |
+| 72 |        72 |       1 | beater | 1997-11-23       |
+| 73 |        73 |       3 | chaser | 1994-01-28       |
+| 74 |        74 |       4 | beater | 1999-11-25       |
+| 75 |        75 |       2 | seeker | 1991-12-28       |
+| 76 |        76 |       3 | seeker | 1993-10-23       |
+| 77 |        77 |       1 | seeker | 1990-07-31       |
+| 78 |        78 |       1 | beater | 1992-01-01       |
+| 79 |        79 |       1 | seeker | 1991-04-27       |
+| 81 |        81 |       1 | seeker | 1998-03-29       |
+| 82 |        82 |       1 | chaser | 1991-08-26       |
+| 83 |        83 |       1 | keeper | 1992-04-17       |
+| 85 |        85 |       1 | beater | 1990-09-05       |
+| 86 |        86 |       1 | seeker | 1997-06-22       |
+| 87 |        87 |       1 | chaser | 1999-04-08       |
+| 88 |        88 |       3 | beater | 1991-07-08       |
+| 89 |        89 |       3 | chaser | 1996-09-25       |
+| 90 |        90 |       1 | keeper | 1993-01-04       |
+| 91 |        91 |       4 | beater | 1993-11-04       |
+| 92 |        92 |       2 | beater | 1997-12-14       |
+| 93 |        93 |       1 | keeper | 1992-05-27       |
++----+-----------+---------+--------+------------------+
+84 rows in set (0.00 sec)
+
+mysql>  SELECT * FROM team;
++----+------------+
+| id | name       |
++----+------------+
+|  1 | Gryffindor |
+|  2 | Ravenclaw  |
+|  3 | Slytherin  |
+|  4 | Hufflepuff |
++----+------------+
+4 rows in set (0.00 sec)
