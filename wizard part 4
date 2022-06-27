@@ -23,15 +23,6 @@ Database changed
 mysql> DROP TABLE IF EXISTS `school`;
 Query OK, 0 rows affected (0.10 sec)
 
-mysql> DESCRIBE team;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| id    | int         | NO   | PRI | NULL    |       |
-| name  | varchar(80) | YES  |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-2 rows in set (0.02 sec)
-
 mysql> SHOW TABLES;
 +-------------------------+
 | Tables_in_wild_db_quest |
@@ -41,3 +32,26 @@ mysql> SHOW TABLES;
 | wizard                  |
 +-------------------------+
 3 rows in set (0.01 sec)
+
+mysql> DESCRIBE team;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(80) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
+mysql> DESCRIBE wizard;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| id          | int          | NO   | PRI | NULL    | auto_increment |
+| firstname   | varchar(100) | NO   |     | NULL    |                |
+| lastname    | varchar(100) | NO   |     | NULL    |                |
+| birthday    | date         | NO   |     | NULL    |                |
+| birth_place | varchar(255) | YES  |     | NULL    |                |
+| biography   | text         | YES  |     | NULL    |                |
+| is_muggle   | tinyint(1)   | NO   |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
