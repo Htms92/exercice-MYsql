@@ -61,3 +61,30 @@ mysql> DESCRIBE team;
 | name  | varchar(80) | YES  |     | NULL    |                |
 +-------+-------------+------+-----+---------+----------------+
 2 rows in set (0.01 sec)
+
+mysql> CREATE TABLE player (
+    -> id INT PRIMARY KEY AUTO_INCREMENT,
+    ->     wizard_id INT,
+    ->     CONSTRAINT fk_wizard
+    ->         FOREIGN KEY (wizard_id)
+    ->         REFERENCES wizard(id),
+    ->     team_id INT,
+    ->     CONSTRAINT fk_team
+    ->         FOREIGN KEY (team_id)
+    ->         REFERENCES team(id),
+    ->  role VARCHAR(50),
+    ->  enrollment_date DATE
+    -> );
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> DESCRIBE player;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| id              | int         | NO   | PRI | NULL    | auto_increment |
+| wizard_id       | int         | YES  | MUL | NULL    |                |
+| team_id         | int         | YES  | MUL | NULL    |                |
+| role            | varchar(50) | YES  |     | NULL    |                |
+| enrollment_date | date        | YES  |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
