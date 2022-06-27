@@ -55,3 +55,15 @@ mysql> DESCRIBE wizard;
 | is_muggle   | tinyint(1)   | NO   |     | NULL    |                |
 +-------------+--------------+------+-----+---------+----------------+
 7 rows in set (0.00 sec)
+
+mysql> DESCRIBE player;
++------------------+-------------+------+-----+---------+-------+
+| Field            | Type        | Null | Key | Default | Extra |
++------------------+-------------+------+-----+---------+-------+
+| id               | int         | NO   | PRI | NULL    |       |
+| wizard_id        | int         | NO   |     | NULL    |       |
+| team_id          | int         | NO   |     | NULL    |       |
+| role             | varchar(50) | NO   |     | NULL    |       |
+| enrollement_date | date        | NO   |     | NULL    |       |
++------------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
