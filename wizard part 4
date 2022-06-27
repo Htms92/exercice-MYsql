@@ -184,3 +184,30 @@ mysql> SELECT * FROM wizard;
 | 14 | dudley    | dursley    | 1980-06-23 |             | Cousin d'Harry                                              |         1 |
 +----+-----------+------------+------------+-------------+-------------------------------------------------------------+-----------+
 14 rows in set (0.01 sec)
+
+mysql> SELECT * FROM team;
++----+------------+
+| id | name       |
++----+------------+
+|  1 | Gryffindor |
+|  2 | Ravenclaw  |
+|  3 | Slytherin  |
+|  4 | Hufflepuff |
++----+------------+
+4 rows in set (0.00 sec)
+
+SELECT w.firstname, w.lastname, p.role, t.name 
+FROM wizard as w 
+INNER JOIN player AS p ON w.id = p.wizard_id
+INNER JOIN team AS t ON  t.id = p.team_id
+ORDER BY t.name ASC, p.role ASC, w.lastname ASC, w.firstname ASC; 
+
+SELECT w.firstname, w.lastname FROM wizard AS w
+INNER JOIN player AS p ON w.id = p.wizard_id
+WHERE p.role = 'seeker'
+ORDER BY w.lastname ASC, w.firstname ASC;
+
+SELECT * FROM wizard
+LEFT JOIN player ON wizard.id=player.wizard_id
+WHERE player.role IS NULL;
+
