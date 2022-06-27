@@ -32,4 +32,12 @@ mysql> DESCRIBE team;
 +-------+-------------+------+-----+---------+-------+
 2 rows in set (0.02 sec)
 
-mysql>
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_wild_db_quest |
++-------------------------+
+| player                  |
+| team                    |
+| wizard                  |
++-------------------------+
+3 rows in set (0.01 sec)
