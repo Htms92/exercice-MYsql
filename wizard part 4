@@ -23,4 +23,13 @@ Database changed
 mysql> DROP TABLE IF EXISTS `school`;
 Query OK, 0 rows affected (0.10 sec)
 
+mysql> DESCRIBE team;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | NO   | PRI | NULL    |       |
+| name  | varchar(80) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.02 sec)
+
 mysql>
