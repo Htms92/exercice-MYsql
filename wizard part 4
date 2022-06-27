@@ -67,3 +67,23 @@ mysql> DESCRIBE player;
 | enrollement_date | date        | NO   |     | NULL    |       |
 +------------------+-------------+------+-----+---------+-------+
 5 rows in set (0.00 sec)
+
+mysql> SELECT lastname, firstname, role, team.name AS team FROM wizard INNER JOIN player ON wizard.id = player.id INNER JOIN team ON player.team_id = team.id ORDER BY team, role, lastname, firstname;
++------------+-----------+--------+------------+
+| lastname   | firstname | role   | team       |
++------------+-----------+--------+------------+
+| malefoy    | drago     | beater | Gryffindor |
+| weasley    | fred      | beater | Gryffindor |
+| granger    | hermione  | chaser | Gryffindor |
+| potter     | lily      | seeker | Gryffindor |
+| potter     | harry     | beater | Hufflepuff |
+| weasley    | george    | chaser | Hufflepuff |
+| weasley    | arthur    | keeper | Hufflepuff |
+| jédusor    | tom       | beater | Ravenclaw  |
+| rogue      | severus   | chaser | Ravenclaw  |
+| dursley    | dudley    | seeker | Ravenclaw  |
+| dumbledore | albus     | beater | Slytherin  |
+| weasley    | ron       | chaser | Slytherin  |
+| weasley    | ginny     | keeper | Slytherin  |
++------------+-----------+--------+------------+
+13 rows in set (0.04 sec)
