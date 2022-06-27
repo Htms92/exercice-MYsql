@@ -20,70 +20,22 @@ mysql>  show databases;
 
 mysql> USE wild_db_quest;
 Database changed
-mysql> DROP TABLE IF EXISTS `school`;
-Query OK, 0 rows affected (0.10 sec)
+mysql> CREATE TABLE `wizard` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `firstname` VARCHAR(100) NOT NULL,
+  `lastname` VARCHAR(100) NOT NULL,
+  `birthday` DATE NOT NULL,
+  `birth_place` VARCHAR(255) NULL,
+  `biography` TEXT NULL,
+  PRIMARY KEY (`id`)
+);
+Query OK, 0 rows affected (0.07 sec)
 
-mysql> SHOW TABLES;
-+-------------------------+
-| Tables_in_wild_db_quest |
-+-------------------------+
-| player                  |
-| team                    |
-| wizard                  |
-+-------------------------+
-3 rows in set (0.01 sec)
+mysql> ALTER TABLE wizard MODIFY firstname varchar(80) NOT NULL;
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
-mysql> DESCRIBE team;
-+-------+-------------+------+-----+---------+-------+
-| Field | Type        | Null | Key | Default | Extra |
-+-------+-------------+------+-----+---------+-------+
-| id    | int         | NO   | PRI | NULL    |       |
-| name  | varchar(80) | YES  |     | NULL    |       |
-+-------+-------------+------+-----+---------+-------+
-2 rows in set (0.02 sec)
+mysql> ALTER TABLE wizard MODIFY lastname varchar(80) NOT NULL;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
 
-mysql> DESCRIBE wizard;
-+-------------+--------------+------+-----+---------+----------------+
-| Field       | Type         | Null | Key | Default | Extra          |
-+-------------+--------------+------+-----+---------+----------------+
-| id          | int          | NO   | PRI | NULL    | auto_increment |
-| firstname   | varchar(100) | NO   |     | NULL    |                |
-| lastname    | varchar(100) | NO   |     | NULL    |                |
-| birthday    | date         | NO   |     | NULL    |                |
-| birth_place | varchar(255) | YES  |     | NULL    |                |
-| biography   | text         | YES  |     | NULL    |                |
-| is_muggle   | tinyint(1)   | NO   |     | NULL    |                |
-+-------------+--------------+------+-----+---------+----------------+
-7 rows in set (0.00 sec)
-
-mysql> DESCRIBE player;
-+------------------+-------------+------+-----+---------+-------+
-| Field            | Type        | Null | Key | Default | Extra |
-+------------------+-------------+------+-----+---------+-------+
-| id               | int         | NO   | PRI | NULL    |       |
-| wizard_id        | int         | NO   |     | NULL    |       |
-| team_id          | int         | NO   |     | NULL    |       |
-| role             | varchar(50) | NO   |     | NULL    |       |
-| enrollement_date | date        | NO   |     | NULL    |       |
-+------------------+-------------+------+-----+---------+-------+
-5 rows in set (0.00 sec)
-
-mysql> SELECT lastname, firstname, role, team.name AS team FROM wizard INNER JOIN player ON wizard.id = player.id INNER JOIN team ON player.team_id = team.id ORDER BY team, role, lastname, firstname;
-+------------+-----------+--------+------------+
-| lastname   | firstname | role   | team       |
-+------------+-----------+--------+------------+
-| malefoy    | drago     | beater | Gryffindor |
-| weasley    | fred      | beater | Gryffindor |
-| granger    | hermione  | chaser | Gryffindor |
-| potter     | lily      | seeker | Gryffindor |
-| potter     | harry     | beater | Hufflepuff |
-| weasley    | george    | chaser | Hufflepuff |
-| weasley    | arthur    | keeper | Hufflepuff |
-| jédusor    | tom       | beater | Ravenclaw  |
-| rogue      | severus   | chaser | Ravenclaw  |
-| dursley    | dudley    | seeker | Ravenclaw  |
-| dumbledore | albus     | beater | Slytherin  |
-| weasley    | ron       | chaser | Slytherin  |
-| weasley    | ginny     | keeper | Slytherin  |
-+------------+-----------+--------+------------+
-13 rows in set (0.04 sec)
